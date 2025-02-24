@@ -9,7 +9,7 @@ import random
 from sklearn.feature_extraction.text import TfidfVectorizer
 from sklearn.linear_model import LogisticRegression
 
-ssl._create_default_htpps_context = ssl._create_unverified_context
+ssl._create_default_https_context = ssl._create_unverified_context
 nltk.data.path.append(os.path.abspath("nltk_data"))
 nltk.download('punkt')
 
@@ -57,7 +57,7 @@ def main():
                 csv_writer.writerow(['User Input', 'Chatbot Response', 'Timestamp'])
 
         counter += 1
-        user_input = st.text_input("You", key=f"user_imput_{counter}")
+        user_input = st.text_input("You", key=f"user_input_{counter}")
        
         if user_input:
             user_input_str = str(user_input)
